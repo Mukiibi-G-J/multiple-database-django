@@ -1,1 +1,6 @@
 python manage.py migrate --database=users_db
+python .\manage.py createsuperuser --database=users_db
+
+//blue app
+python manage.py makemigrations 
+python manage.py migrate --database=blue_db  

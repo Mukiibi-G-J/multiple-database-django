@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blue',
+    'aqua'
 ]
 
 MIDDLEWARE = [
@@ -75,13 +77,22 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     },
      'users_db': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'user.db.sqlite3',
-    }
+    },
+        'blue_db': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'blue.db.sqlite3',
+    },
+        "aqua_db": {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'aqua.db.sqlite3',
+    },
+    
 }
 
 
@@ -129,4 +140,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # <--------------------my routers ---------------------->
-DATABASES_ROUTERS = ['routers.db_routers.AuthRouter']
+DATABASE_ROUTERS = ['routers.db_routers.AuthRouter', 'routers.db_routers.BlueRouter', 'routers.db_routers.AquaRouter']
